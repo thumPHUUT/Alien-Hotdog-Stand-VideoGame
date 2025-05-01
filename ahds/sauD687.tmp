@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://tjtv3uphqx3n"]
+
+[ext_resource type="Texture2D" uid="uid://bqe3md0qaoxh3" path="res://art/sausage.png" id="1_7tlru"]
+[ext_resource type="Script" path="res://sausage.gd" id="1_x8pxn"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_b8mbw"]
+bounce = 0.1
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8ule1"]
+radius = 15.0
+height = 230.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gydrx"]
+radius = 30.0
+height = 230.0
+
+[node name="Sausage" type="RigidBody2D"]
+position = Vector2(159, 112)
+physics_material_override = SubResource("PhysicsMaterial_b8mbw")
+script = ExtResource("1_x8pxn")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2DPhysics" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_8ule1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_7tlru")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2DMouse" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_gydrx")
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
