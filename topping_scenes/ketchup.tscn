@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwjwvdqtgmfdf"]
+
+[ext_resource type="Script" uid="uid://rpoqnxymyc1d" path="res://topping_scenes/ketchup.gd" id="1_hgxi6"]
+[ext_resource type="Texture2D" uid="uid://dj1boxei12tmo" path="res://art/Topping Spawners/Ketchup Bottle.png" id="1_qlhr0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7vnf"]
+size = Vector2(63, 44)
+
+[node name="Ketchup" type="Node2D"]
+script = ExtResource("1_hgxi6")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3, 0)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_qlhr0")
+
+[node name="SauceHitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SauceHitBox"]
+position = Vector2(-0.5, -107)
+shape = SubResource("RectangleShape2D_g7vnf")
+
+[node name="MouseHitBox" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MouseHitBox"]
+polygon = PackedVector2Array(-21, 52, 20, 52, 33, 38, 32, -26, 8, -74, -1, -94, -9, -75, -32, -25, -34, 36)
+
+[connection signal="body_entered" from="SauceHitBox" to="." method="_on_sauce_hit_box_body_entered"]
+[connection signal="mouse_entered" from="MouseHitBox" to="." method="_on_mouse_hit_box_mouse_entered"]
+[connection signal="mouse_exited" from="MouseHitBox" to="." method="_on_mouse_hit_box_mouse_exited"]

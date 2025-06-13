@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4tsh6lx4c5w8"]
+
+[ext_resource type="Script" uid="uid://ducmx2idkipje" path="res://topping_scenes/cheese.gd" id="1_l8pvg"]
+[ext_resource type="Texture2D" uid="uid://dvjymv5t7nwjs" path="res://art/Topping Spawners/Cheese Shaker.png" id="2_l8pvg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7vnf"]
+size = Vector2(63, 44)
+
+[node name="Cheese" type="Node2D"]
+script = ExtResource("1_l8pvg")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3, 0)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_l8pvg")
+
+[node name="ToppingHitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToppingHitBox"]
+position = Vector2(-2, -70)
+shape = SubResource("RectangleShape2D_g7vnf")
+
+[node name="MouseHitBox" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MouseHitBox"]
+polygon = PackedVector2Array(-32, 48, 27, 48, 26, -42, 12, -53, -18, -53, -31, -41)
+
+[connection signal="body_entered" from="ToppingHitBox" to="." method="_on_topping_hit_box_body_entered"]
+[connection signal="mouse_entered" from="MouseHitBox" to="." method="_on_mouse_hit_box_mouse_entered"]
+[connection signal="mouse_exited" from="MouseHitBox" to="." method="_on_mouse_hit_box_mouse_exited"]

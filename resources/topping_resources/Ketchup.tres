@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ToppingResource" load_steps=2 format=3 uid="uid://mw2l24ip06dl"]
+
+[ext_resource type="Script" uid="uid://bjxhoqw5ls7fc" path="res://resources/topping_resource.gd" id="1_o5d8b"]
+
+[resource]
+script = ExtResource("1_o5d8b")
+Name = "Ketchup"
+Colour = "Red"
+Consistency = "Liquid"
+Flavor = "Zesty"
+metadata/_custom_type_script = "uid://bjxhoqw5ls7fc"

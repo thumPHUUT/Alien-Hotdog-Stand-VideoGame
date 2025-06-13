@@ -1,0 +1,210 @@
+[gd_scene load_steps=14 format=3 uid="uid://whkp877b4vsy"]
+
+[ext_resource type="Script" uid="uid://cyrky4srevd5u" path="res://alien_scenes/alien.gd" id="1_jur2y"]
+[ext_resource type="Texture2D" uid="uid://bx70mkhhtq8md" path="res://art/Alien/AlienP.png" id="2_0fkk3"]
+[ext_resource type="Texture2D" uid="uid://mvkgo06qkxjv" path="res://art/Alien/Outlines/AlienPoutlineY.png" id="3_yq2hf"]
+[ext_resource type="Texture2D" uid="uid://dqx3euuo51s7e" path="res://art/Alien/Outlines/AlienPoutlineG.png" id="4_m1idr"]
+[ext_resource type="Texture2D" uid="uid://yfscs137xlka" path="res://art/Alien/Outlines/AlienPoutlineR.png" id="5_03iqy"]
+[ext_resource type="Texture2D" uid="uid://cxsnmchkm265t" path="res://art/Alien/AlienG.png" id="6_3kilb"]
+[ext_resource type="Texture2D" uid="uid://e7u48nnklw6h" path="res://art/Alien/Outlines/AlienGoutlineY.png" id="7_qyj5t"]
+[ext_resource type="Texture2D" uid="uid://dtfcsp5gdfmxg" path="res://art/Alien/Outlines/AlienGoutlineG.png" id="8_m68y2"]
+[ext_resource type="Texture2D" uid="uid://b3dkkr1hx8lur" path="res://art/Alien/Outlines/AlienGoutlineR.png" id="9_guust"]
+[ext_resource type="Texture2D" uid="uid://cpapqvhp11fxu" path="res://art/Alien/AlienY.png" id="10_fglnb"]
+[ext_resource type="Texture2D" uid="uid://dpp0b3fpxodqd" path="res://art/Alien/Outlines/AlienYoutlineY.png" id="11_p305h"]
+[ext_resource type="Texture2D" uid="uid://ddy31yyxlgmc1" path="res://art/Alien/Outlines/AlienYoutlineG.png" id="12_k2wjk"]
+[ext_resource type="Texture2D" uid="uid://cd1opxdik5i1k" path="res://art/Alien/Outlines/AlienYoutlineR.png" id="13_ttp6g"]
+
+[node name="Alien" type="Node2D"]
+position = Vector2(611, 328)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_jur2y")
+metadata/_edit_group_ = true
+
+[node name="PurpleAlien" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_0fkk3")
+
+[node name="Colour" type="Node2D" parent="PurpleAlien"]
+
+[node name="Yellow" type="Sprite2D" parent="PurpleAlien/Colour"]
+visible = false
+texture = ExtResource("3_yq2hf")
+
+[node name="Green" type="Sprite2D" parent="PurpleAlien/Colour"]
+visible = false
+texture = ExtResource("4_m1idr")
+
+[node name="Red" type="Sprite2D" parent="PurpleAlien/Colour"]
+visible = false
+texture = ExtResource("5_03iqy")
+
+[node name="Consistency" type="Node2D" parent="PurpleAlien"]
+
+[node name="Sprinkles" type="Label" parent="PurpleAlien/Consistency"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Sprinkles"
+
+[node name="Liquid" type="Label" parent="PurpleAlien/Consistency"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Liquid"
+
+[node name="Solid" type="Label" parent="PurpleAlien/Consistency"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Solid"
+
+[node name="Flavor" type="Node2D" parent="PurpleAlien"]
+
+[node name="Salty" type="Label" parent="PurpleAlien/Flavor"]
+visible = false
+offset_left = 4.0
+offset_top = 52.0
+offset_right = 75.0
+offset_bottom = 75.0
+text = "Salty"
+
+[node name="Spicy" type="Label" parent="PurpleAlien/Flavor"]
+visible = false
+offset_left = 2.0
+offset_top = 48.0
+offset_right = 42.0
+offset_bottom = 71.0
+text = "Spicy"
+
+[node name="Zesty" type="Label" parent="PurpleAlien/Flavor"]
+visible = false
+offset_top = 50.0
+offset_right = 42.0
+offset_bottom = 99.0
+text = "Zesty"
+
+[node name="GreenAlien" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("6_3kilb")
+
+[node name="Colour" type="Node2D" parent="GreenAlien"]
+
+[node name="Yellow" type="Sprite2D" parent="GreenAlien/Colour"]
+visible = false
+texture = ExtResource("7_qyj5t")
+
+[node name="Green" type="Sprite2D" parent="GreenAlien/Colour"]
+visible = false
+texture = ExtResource("8_m68y2")
+
+[node name="Red" type="Sprite2D" parent="GreenAlien/Colour"]
+visible = false
+texture = ExtResource("9_guust")
+
+[node name="Consistency" type="Node2D" parent="GreenAlien"]
+
+[node name="Sprinkles" type="Label" parent="GreenAlien/Consistency"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Sprinkles"
+
+[node name="Liquid" type="Label" parent="GreenAlien/Consistency"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Liquid"
+
+[node name="Solid" type="Label" parent="GreenAlien/Consistency"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Solid"
+
+[node name="Flavor" type="Node2D" parent="GreenAlien"]
+
+[node name="Salty" type="Label" parent="GreenAlien/Flavor"]
+visible = false
+offset_left = 4.0
+offset_top = 52.0
+offset_right = 75.0
+offset_bottom = 75.0
+text = "Salty"
+
+[node name="Spicy" type="Label" parent="GreenAlien/Flavor"]
+visible = false
+offset_left = 2.0
+offset_top = 48.0
+offset_right = 42.0
+offset_bottom = 71.0
+text = "Spicy"
+
+[node name="Zesty" type="Label" parent="GreenAlien/Flavor"]
+visible = false
+offset_top = 50.0
+offset_right = 42.0
+offset_bottom = 99.0
+text = "Zesty"
+
+[node name="YellowAlien" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("10_fglnb")
+
+[node name="Colour" type="Node2D" parent="YellowAlien"]
+
+[node name="Yellow" type="Sprite2D" parent="YellowAlien/Colour"]
+visible = false
+texture = ExtResource("11_p305h")
+
+[node name="Green" type="Sprite2D" parent="YellowAlien/Colour"]
+visible = false
+texture = ExtResource("12_k2wjk")
+
+[node name="Red" type="Sprite2D" parent="YellowAlien/Colour"]
+visible = false
+texture = ExtResource("13_ttp6g")
+
+[node name="Consistency" type="Node2D" parent="YellowAlien"]
+
+[node name="Sprinkles" type="Label" parent="YellowAlien/Consistency"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Sprinkles"
+
+[node name="Liquid" type="Label" parent="YellowAlien/Consistency"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Liquid"
+
+[node name="Solid" type="Label" parent="YellowAlien/Consistency"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Solid"
+
+[node name="Flavor" type="Node2D" parent="YellowAlien"]
+
+[node name="Salty" type="Label" parent="YellowAlien/Flavor"]
+visible = false
+offset_left = 4.0
+offset_top = 52.0
+offset_right = 75.0
+offset_bottom = 75.0
+text = "Salty"
+
+[node name="Spicy" type="Label" parent="YellowAlien/Flavor"]
+visible = false
+offset_left = 2.0
+offset_top = 48.0
+offset_right = 42.0
+offset_bottom = 71.0
+text = "Spicy"
+
+[node name="Zesty" type="Label" parent="YellowAlien/Flavor"]
+visible = false
+offset_top = 50.0
+offset_right = 42.0
+offset_bottom = 99.0
+text = "Zesty"

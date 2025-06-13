@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7jk5k1cxydtg"]
+
+[ext_resource type="Script" uid="uid://d1iw76o487hey" path="res://topping_scenes/jalapenos.gd" id="1_uck63"]
+[ext_resource type="Texture2D" uid="uid://bqy1ww1ud8dta" path="res://art/Topping Spawners/Jalapenos.png" id="2_uck63"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l72x1"]
+radius = 58.0345
+
+[node name="Jalapenos" type="Node2D"]
+script = ExtResource("1_uck63")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3, 0)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_uck63")
+
+[node name="ToppingHitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToppingHitBox"]
+shape = SubResource("CircleShape2D_l72x1")
+
+[node name="MouseHitBox" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MouseHitBox"]
+polygon = PackedVector2Array(-28, 37, 30, 43, 54, 9, 35, -42, -37, -39, -45, -24, -40, 22)
+
+[connection signal="body_entered" from="ToppingHitBox" to="." method="_on_topping_hit_box_body_entered"]
+[connection signal="mouse_entered" from="MouseHitBox" to="." method="_on_mouse_hit_box_mouse_entered"]
+[connection signal="mouse_exited" from="MouseHitBox" to="." method="_on_mouse_hit_box_mouse_exited"]

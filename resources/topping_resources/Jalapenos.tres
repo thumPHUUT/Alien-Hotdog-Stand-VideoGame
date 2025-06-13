@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ToppingResource" load_steps=2 format=3 uid="uid://u0hcuhrdh3k1"]
+
+[ext_resource type="Script" uid="uid://bjxhoqw5ls7fc" path="res://resources/topping_resource.gd" id="1_a2165"]
+
+[resource]
+script = ExtResource("1_a2165")
+Name = "Jalapenos"
+Colour = "Green"
+Consistency = "Solid"
+Flavor = "Spicy"
+metadata/_custom_type_script = "uid://bjxhoqw5ls7fc"

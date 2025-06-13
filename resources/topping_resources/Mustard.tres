@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ToppingResource" load_steps=2 format=3 uid="uid://bb1ghv3xs4i5m"]
+
+[ext_resource type="Script" uid="uid://bjxhoqw5ls7fc" path="res://resources/topping_resource.gd" id="1_cegfs"]
+
+[resource]
+script = ExtResource("1_cegfs")
+Name = "Mustard"
+Colour = "Yellow"
+Consistency = "Liquid"
+Flavor = "Spicy"
+metadata/_custom_type_script = "uid://bjxhoqw5ls7fc"

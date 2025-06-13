@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="AlienResource" load_steps=2 format=3 uid="uid://b6oyqn4gtde6c"]
+
+[ext_resource type="Script" uid="uid://p8ltr4iyi0ml" path="res://resources/alien_resource.gd" id="1_4bwjp"]
+
+[resource]
+script = ExtResource("1_4bwjp")
+name = ""
+bias = {
+"Bacon": 0,
+"Cheese": 0,
+"ChiliFlakes": -1,
+"Chives": 1,
+"Fries": 1,
+"Jalapenos": -1,
+"Ketchup": 1,
+"Mustard": -1,
+"Relish": 0
+}
+metadata/_custom_type_script = "uid://p8ltr4iyi0ml"
