@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3kvissg6i644"]
+
+[ext_resource type="Script" uid="uid://c4vrie0ks48j2" path="res://upgrade_screen.gd" id="1_scxlh"]
+[ext_resource type="PackedScene" uid="uid://3jct2jefo3gm" path="res://scoring_node.tscn" id="2_ovwte"]
+
+[node name="UpgradeScreen" type="Node2D"]
+script = ExtResource("1_scxlh")
+
+[node name="BasePower" type="Button" parent="."]
+offset_left = 75.0
+offset_top = 200.0
+offset_right = 349.0
+offset_bottom = 277.0
+text = "Upgrade -Sure Shot Approach-
+(1.5x -> 2.0x Base Payout)
+- 20g -"
+
+[node name="MultPower" type="Button" parent="."]
+offset_left = 460.0
+offset_top = 200.0
+offset_right = 736.0
+offset_bottom = 277.0
+text = "Upgrade -All Rounder Power- 
+(1.25x -> 1.50x Total Payout)
+- 30g -"
+
+[node name="TipPower" type="Button" parent="."]
+offset_left = 875.0
+offset_top = 200.0
+offset_right = 1179.0
+offset_bottom = 277.0
+text = "Upgrade -Premium Service Technique- 
+(1.75x -> 2.50x Tip Payout)
+- 40g -"
+
+[node name="MoneyLabel" type="Label" parent="."]
+offset_left = 520.0
+offset_top = 50.0
+offset_right = 655.0
+offset_bottom = 73.0
+text = "Current Money: 0"
+
+[node name="BaseDefault" type="Button" parent="."]
+offset_left = 75.0
+offset_top = 390.0
+offset_right = 349.0
+offset_bottom = 467.0
+text = "Increase Default Base Payout
+(1.0x -> 1.50x)
+- 15g -"
+
+[node name="MultDefault" type="Button" parent="."]
+offset_left = 460.0
+offset_top = 390.0
+offset_right = 736.0
+offset_bottom = 467.0
+text = "Increase Default Overal Payout
+(1.0x -> 1.10x)
+- 20g -"
+
+[node name="TipDefault" type="Button" parent="."]
+offset_left = 875.0
+offset_top = 390.0
+offset_right = 1179.0
+offset_bottom = 467.0
+text = "Increase Default Tip Payout
+(1.0x -> 1.20x)
+- 25g -"
+
+[node name="ScoringNode" parent="." instance=ExtResource("2_ovwte")]
+position = Vector2(3, 0)
+
+[connection signal="pressed" from="BasePower" to="." method="_on_base_power_pressed"]
+[connection signal="pressed" from="MultPower" to="." method="_on_mult_power_pressed"]
+[connection signal="pressed" from="TipPower" to="." method="_on_tip_power_pressed"]
+[connection signal="pressed" from="BaseDefault" to="." method="_on_base_default_pressed"]
