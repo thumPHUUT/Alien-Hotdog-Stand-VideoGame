@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ToppingResource" load_steps=2 format=3 uid="uid://6ophd2rqo3ls"]
+
+[ext_resource type="Script" uid="uid://bjxhoqw5ls7fc" path="res://resources/topping_resource.gd" id="1_4jf7u"]
+
+[resource]
+script = ExtResource("1_4jf7u")
+Name = "Relish"
+Colour = "Green"
+Consistency = "Liquid"
+Flavor = "Zesty"
+metadata/_custom_type_script = "uid://bjxhoqw5ls7fc"

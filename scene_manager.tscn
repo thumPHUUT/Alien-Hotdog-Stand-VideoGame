@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bf7yfd7303g5w"]
+
+[ext_resource type="PackedScene" uid="uid://c3kvissg6i644" path="res://upgrade_screen.tscn" id="1_a4gjy"]
+[ext_resource type="Script" uid="uid://dei26cg4vwrap" path="res://scene_manager.gd" id="1_q0i0d"]
+[ext_resource type="Texture2D" uid="uid://bb4enna0ylt2u" path="res://art/Background+Labels/background.png" id="2_i6dy3"]
+[ext_resource type="PackedScene" uid="uid://3jct2jefo3gm" path="res://scoring_node.tscn" id="2_q0i0d"]
+[ext_resource type="PackedScene" uid="uid://cd3yww08hlrrs" path="res://start_menu.tscn" id="4_opu64"]
+
+[node name="SceneManager" type="Node2D"]
+script = ExtResource("1_q0i0d")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(0.5, 0.45)
+texture = ExtResource("2_i6dy3")
+
+[node name="UpgradeScreen" parent="." instance=ExtResource("1_a4gjy")]
+visible = false
+
+[node name="ScoringNode" parent="." instance=ExtResource("2_q0i0d")]
+
+[node name="RentLabel" type="Label" parent="."]
+visible = false
+offset_left = 1099.0
+offset_top = 23.0
+offset_right = 1245.0
+offset_bottom = 46.0
+text = "Next Days Rent: 15"
+
+[node name="StartMenu" parent="." instance=ExtResource("4_opu64")]
+
+[node name="GameOverLabel" type="Label" parent="."]
+visible = false
+offset_left = 530.0
+offset_top = 280.0
+offset_right = 631.0
+offset_bottom = 303.0
+scale = Vector2(2.5, 2.5)
+text = "Game Over :("

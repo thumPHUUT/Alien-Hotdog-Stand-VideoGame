@@ -1,0 +1,256 @@
+[gd_scene load_steps=24 format=3 uid="uid://crnpdcniyudom"]
+
+[ext_resource type="PackedScene" uid="uid://66uavv5dcadh" path="res://hotdog_scenes/bun.tscn" id="1_0bya5"]
+[ext_resource type="Script" uid="uid://csntimnq8vvgg" path="res://world.gd" id="1_hcfqt"]
+[ext_resource type="PackedScene" uid="uid://bqrf13u3al8hw" path="res://hotdog_scenes/hot_dog.tscn" id="2_ee3wf"]
+[ext_resource type="PackedScene" uid="uid://tjtv3uphqx3n" path="res://hotdog_scenes/sausage.tscn" id="3_26rs2"]
+[ext_resource type="PackedScene" uid="uid://3jct2jefo3gm" path="res://scoring_node.tscn" id="5_2u3nc"]
+[ext_resource type="Texture2D" uid="uid://c1wc6l50t5ybq" path="res://art/Background+Labels/table.png" id="6_2u3nc"]
+[ext_resource type="PackedScene" uid="uid://hvshml3mikpk" path="res://alien_scenes/alien_queue.tscn" id="6_hiqwa"]
+[ext_resource type="PackedScene" uid="uid://cwjwvdqtgmfdf" path="res://topping_scenes/ketchup.tscn" id="6_vjioc"]
+[ext_resource type="PackedScene" uid="uid://bfu2q2u8u2ai2" path="res://topping_scenes/mustard.tscn" id="7_5gnui"]
+[ext_resource type="PackedScene" uid="uid://bst53nlkos8mp" path="res://topping_scenes/relish.tscn" id="8_7o1t6"]
+[ext_resource type="PackedScene" uid="uid://b4tsh6lx4c5w8" path="res://topping_scenes/cheese.tscn" id="9_ioo17"]
+[ext_resource type="PackedScene" uid="uid://my1ai0i0xxyy" path="res://topping_scenes/chili_flakes.tscn" id="10_wse8f"]
+[ext_resource type="PackedScene" uid="uid://c7680w5dkkvu7" path="res://topping_scenes/chives.tscn" id="11_ic0uy"]
+[ext_resource type="PackedScene" uid="uid://c7jk5k1cxydtg" path="res://topping_scenes/jalapenos.tscn" id="12_k3n1d"]
+[ext_resource type="PackedScene" uid="uid://bw4w3yu45qrcn" path="res://topping_scenes/fries.tscn" id="13_70uel"]
+[ext_resource type="PackedScene" uid="uid://benb5tvr5spbt" path="res://topping_scenes/bacon.tscn" id="14_hiqwa"]
+[ext_resource type="Texture2D" uid="uid://t7g47j5qhm02" path="res://art/Background+Labels/label.png" id="17_udxuc"]
+[ext_resource type="Texture2D" uid="uid://b8gsu2ksk886o" path="res://art/Background+Labels/label2.png" id="18_ikiii"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4qje"]
+size = Vector2(926, 101)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_70uel"]
+size = Vector2(219.5, 53.5)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_cbp6q"]
+frames = 2
+speed_scale = 3.0
+frame_0/texture = ExtResource("17_udxuc")
+frame_1/texture = ExtResource("18_ikiii")
+frame_1/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_ikiii"]
+frames = 2
+speed_scale = 3.0
+frame_0/texture = ExtResource("17_udxuc")
+frame_1/texture = ExtResource("18_ikiii")
+frame_1/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_26xuy"]
+frames = 2
+speed_scale = 3.0
+frame_0/texture = ExtResource("17_udxuc")
+frame_1/texture = ExtResource("18_ikiii")
+frame_1/duration = 1.0
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_hcfqt")
+hotdog_scene = ExtResource("2_ee3wf")
+sausage_scene = ExtResource("3_26rs2")
+bun_scene = ExtResource("1_0bya5")
+
+[node name="ScoringNode" parent="." instance=ExtResource("5_2u3nc")]
+
+[node name="Table" type="StaticBody2D" parent="."]
+position = Vector2(602, 664)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Table"]
+position = Vector2(39, -304)
+scale = Vector2(0.5, 0.45)
+texture = ExtResource("6_2u3nc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Table"]
+position = Vector2(52, -9.5)
+shape = SubResource("RectangleShape2D_f4qje")
+
+[node name="ScoringDetector" type="Area2D" parent="."]
+position = Vector2(310, 349)
+metadata/_edit_group_ = true
+
+[node name="Button" type="Button" parent="ScoringDetector"]
+offset_left = -74.0
+offset_top = -26.0
+offset_right = 146.0
+offset_bottom = 27.0
+text = "Scoring Zone, 
+Press to start
+"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoringDetector"]
+position = Vector2(36.25, 1.25)
+shape = SubResource("RectangleShape2D_70uel")
+
+[node name="AlienQueue" parent="." instance=ExtResource("6_hiqwa")]
+
+[node name="Toppings" type="Node2D" parent="."]
+
+[node name="Ketchup" parent="Toppings" instance=ExtResource("6_vjioc")]
+position = Vector2(1191, 321)
+
+[node name="Bacon" parent="Toppings" instance=ExtResource("14_hiqwa")]
+position = Vector2(88.6, 267)
+
+[node name="Fries" parent="Toppings" instance=ExtResource("13_70uel")]
+position = Vector2(91.6, 403)
+
+[node name="Jalapenos" parent="Toppings" instance=ExtResource("12_k3n1d")]
+position = Vector2(94.6, 546)
+
+[node name="Chives" parent="Toppings" instance=ExtResource("11_ic0uy")]
+position = Vector2(939, 557)
+
+[node name="ChiliFlakes" parent="Toppings" instance=ExtResource("10_wse8f")]
+position = Vector2(1014, 557)
+
+[node name="Cheese" parent="Toppings" instance=ExtResource("9_ioo17")]
+position = Vector2(1089, 557)
+
+[node name="Relish" parent="Toppings" instance=ExtResource("8_7o1t6")]
+position = Vector2(1005, 319)
+
+[node name="Mustard" parent="Toppings" instance=ExtResource("7_5gnui")]
+position = Vector2(1098, 319)
+
+[node name="ToppingLabels" type="Node" parent="."]
+
+[node name="Solids2" type="Sprite2D" parent="ToppingLabels"]
+position = Vector2(84.6, 167)
+scale = Vector2(0.07, 0.07)
+texture = SubResource("AnimatedTexture_cbp6q")
+
+[node name="Solids2" type="Sprite2D" parent="ToppingLabels/Solids2"]
+position = Vector2(2362.86, -1942.86)
+scale = Vector2(0.8, 0.8)
+texture = SubResource("AnimatedTexture_cbp6q")
+
+[node name="Sauces2" type="Sprite2D" parent="ToppingLabels"]
+position = Vector2(1098, 158)
+scale = Vector2(0.07, 0.07)
+texture = SubResource("AnimatedTexture_ikiii")
+
+[node name="Sprinkles2" type="Sprite2D" parent="ToppingLabels"]
+position = Vector2(1010, 423)
+scale = Vector2(0.07, 0.07)
+texture = SubResource("AnimatedTexture_26xuy")
+
+[node name="Solids" type="Label" parent="ToppingLabels"]
+offset_left = 24.0
+offset_top = 146.0
+offset_right = 145.0
+offset_bottom = 194.0
+text = "Solids"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Solids" type="Label" parent="ToppingLabels/Solids"]
+layout_mode = 0
+offset_left = 179.0
+offset_top = -135.0
+offset_right = 273.0
+offset_bottom = -94.0
+text = "Powers"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprinkles" type="Label" parent="ToppingLabels"]
+offset_left = 952.0
+offset_top = 400.0
+offset_right = 1068.0
+offset_bottom = 451.0
+text = "Sprinkles"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sauces" type="Label" parent="ToppingLabels"]
+offset_left = 1039.0
+offset_top = 134.0
+offset_right = 1159.0
+offset_bottom = 188.0
+text = "Sauces"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PowerButtons" type="Node2D" parent="."]
+
+[node name="OverallMultPower" type="Button" parent="PowerButtons"]
+offset_left = 183.0
+offset_top = 65.0
+offset_right = 334.0
+offset_bottom = 120.0
+text = "1.25x Total Payout
+- costs 10g -
+"
+
+[node name="BasePayPower" type="Button" parent="PowerButtons"]
+offset_left = 22.0
+offset_top = 65.0
+offset_right = 172.0
+offset_bottom = 120.0
+text = "1.5x Base Payout
+- costs 5g -
+"
+
+[node name="TipPower" type="Button" parent="PowerButtons"]
+offset_left = 352.0
+offset_top = 65.0
+offset_right = 502.0
+offset_bottom = 120.0
+text = "1.75x Tip Payout
+- costs 35g -"
+
+[node name="NextLevelButton" type="Button" parent="."]
+offset_left = 543.0
+offset_top = 329.0
+offset_right = 734.0
+offset_bottom = 398.0
+text = "Next Level!"
+
+[node name="AlienRemainingLabel" type="Label" parent="."]
+offset_left = 773.0
+offset_top = 26.0
+offset_right = 1046.0
+offset_bottom = 49.0
+text = "Press Start to See Remaining Aliens"
+
+[node name="MoneyLabels" type="Node2D" parent="."]
+
+[node name="TotalMoneyLabel" type="Label" parent="MoneyLabels"]
+offset_left = 571.0
+offset_top = 13.0
+offset_right = 720.0
+offset_bottom = 45.0
+text = "Total Money: 0g"
+
+[node name="RecentMoneyLabel" type="Label" parent="MoneyLabels"]
+offset_left = 563.0
+offset_top = 44.0
+offset_right = 744.0
+offset_bottom = 76.0
+text = "Most Recent Payout: 0g"
+
+[node name="RecentTipLabel" type="Label" parent="MoneyLabels"]
+visible = false
+offset_left = 720.0
+offset_top = 272.0
+offset_right = 776.0
+offset_bottom = 295.0
+text = "+Xg Tip"
+
+[node name="RecentBaseLabel" type="Label" parent="MoneyLabels"]
+visible = false
+offset_left = 731.0
+offset_top = 292.0
+offset_right = 978.0
+offset_bottom = 341.0
+text = "+Xg Base"
+
+[connection signal="body_entered" from="ScoringDetector" to="." method="_on_scoring_detector_body_entered"]
+[connection signal="pressed" from="ScoringDetector/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PowerButtons/OverallMultPower" to="." method="_on_overall_mult_power_pressed"]
+[connection signal="pressed" from="PowerButtons/BasePayPower" to="." method="_on_base_pay_power_pressed"]
+[connection signal="pressed" from="PowerButtons/TipPower" to="." method="_on_tip_power_pressed"]
+[connection signal="pressed" from="NextLevelButton" to="." method="_on_next_level_button_pressed"]

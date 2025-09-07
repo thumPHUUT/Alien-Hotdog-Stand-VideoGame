@@ -1,0 +1,134 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3kvissg6i644"]
+
+[ext_resource type="Script" uid="uid://c4vrie0ks48j2" path="res://upgrade_screen.gd" id="1_scxlh"]
+[ext_resource type="PackedScene" uid="uid://3jct2jefo3gm" path="res://scoring_node.tscn" id="2_ovwte"]
+[ext_resource type="Texture2D" uid="uid://t7g47j5qhm02" path="res://art/Background+Labels/label.png" id="3_sbak5"]
+[ext_resource type="Texture2D" uid="uid://b8gsu2ksk886o" path="res://art/Background+Labels/label2.png" id="4_bfcw2"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_scxlh"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_l7xai"]
+frames = 2
+speed_scale = 3.0
+frame_0/texture = ExtResource("3_sbak5")
+frame_1/texture = ExtResource("4_bfcw2")
+frame_1/duration = 1.0
+
+[node name="UpgradeScreen" type="Node2D"]
+script = ExtResource("1_scxlh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(638, 362)
+scale = Vector2(0.5, 0.45)
+texture = SubResource("CompressedTexture2D_scxlh")
+
+[node name="BasePower" type="Button" parent="."]
+offset_left = 75.0
+offset_top = 215.0
+offset_right = 349.0
+offset_bottom = 292.0
+text = "Upgrade -Sure Shot Approach-
+(1.5x -> 2.0x Base Payout)
+- 20g -"
+
+[node name="MultPower" type="Button" parent="."]
+offset_left = 460.0
+offset_top = 215.0
+offset_right = 736.0
+offset_bottom = 292.0
+text = "Upgrade -All Rounder Power- 
+(1.25x -> 1.5x Total Payout)
+- 30g -"
+
+[node name="TipPower" type="Button" parent="."]
+offset_left = 875.0
+offset_top = 215.0
+offset_right = 1179.0
+offset_bottom = 292.0
+text = "Upgrade -Premium Service Technique- 
+(1.75x -> 2.5x Tip Payout)
+- 40g -"
+
+[node name="MoneyLabel" type="Label" parent="."]
+offset_left = 520.0
+offset_top = 50.0
+offset_right = 655.0
+offset_bottom = 73.0
+text = "Current Money: 0"
+
+[node name="BaseDefault" type="Button" parent="."]
+offset_left = 75.0
+offset_top = 419.0
+offset_right = 349.0
+offset_bottom = 496.0
+text = "Increase Default Base Payout
+(1.0x -> 1.5x)
+- 15g -"
+
+[node name="MultDefault" type="Button" parent="."]
+offset_left = 460.0
+offset_top = 419.0
+offset_right = 736.0
+offset_bottom = 496.0
+text = "Increase Default Total Payout
+(1.0x -> 1.25x)
+- 20g -"
+
+[node name="TipDefault" type="Button" parent="."]
+offset_left = 875.0
+offset_top = 419.0
+offset_right = 1179.0
+offset_bottom = 496.0
+text = "Increase Default Tip Payout
+(1.0x -> 1.2x)
+- 25g -"
+
+[node name="ScoringNode" parent="." instance=ExtResource("2_ovwte")]
+position = Vector2(3, 0)
+
+[node name="NextLevel" type="Button" parent="."]
+offset_left = 500.0
+offset_top = 562.0
+offset_right = 700.0
+offset_bottom = 632.0
+text = "Leave Upgrade Screen 
+--> Next Level!"
+
+[node name="Labels" type="Node2D" parent="."]
+
+[node name="Default" type="Sprite2D" parent="Labels"]
+position = Vector2(600, 372)
+scale = Vector2(0.08, 0.07)
+texture = SubResource("AnimatedTexture_l7xai")
+
+[node name="Powers" type="Sprite2D" parent="Labels"]
+position = Vector2(600, 154)
+scale = Vector2(0.08, 0.07)
+texture = SubResource("AnimatedTexture_l7xai")
+
+[node name="Default2" type="Label" parent="Labels"]
+offset_left = 536.0
+offset_top = 351.0
+offset_right = 664.0
+offset_bottom = 400.0
+text = "Upgrade Default
+Scoring"
+horizontal_alignment = 1
+
+[node name="Powers2" type="Label" parent="Labels"]
+offset_left = 543.0
+offset_top = 133.0
+offset_right = 656.0
+offset_bottom = 182.0
+text = "Upgrade Daily 
+Powers"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="BasePower" to="." method="_on_base_power_pressed"]
+[connection signal="pressed" from="MultPower" to="." method="_on_mult_power_pressed"]
+[connection signal="pressed" from="TipPower" to="." method="_on_tip_power_pressed"]
+[connection signal="pressed" from="BaseDefault" to="." method="_on_base_default_pressed"]
+[connection signal="pressed" from="MultDefault" to="." method="_on_mult_default_pressed"]
+[connection signal="pressed" from="TipDefault" to="." method="_on_tip_default_pressed"]
+[connection signal="pressed" from="NextLevel" to="." method="_on_next_level_pressed"]

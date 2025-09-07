@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://benb5tvr5spbt"]
+
+[ext_resource type="Script" uid="uid://gep21yxrnyqx" path="res://topping_scenes/bacon.gd" id="1_j67q2"]
+[ext_resource type="Texture2D" uid="uid://bd03c5cuoqcp7" path="res://art/Topping Spawners/Bacon.png" id="2_hsjap"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l72x1"]
+radius = 58.0345
+
+[node name="Bacon" type="Node2D"]
+script = ExtResource("1_j67q2")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3, 0)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_hsjap")
+
+[node name="ToppingHitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToppingHitBox"]
+shape = SubResource("CircleShape2D_l72x1")
+
+[node name="MouseHitBox" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MouseHitBox"]
+polygon = PackedVector2Array(-28, 37, 30, 43, 54, 9, 35, -42, -37, -39, -45, -24, -40, 22)
+
+[connection signal="body_entered" from="ToppingHitBox" to="." method="_on_topping_hit_box_body_entered"]
+[connection signal="mouse_entered" from="MouseHitBox" to="." method="_on_mouse_hit_box_mouse_entered"]
+[connection signal="mouse_exited" from="MouseHitBox" to="." method="_on_mouse_hit_box_mouse_exited"]

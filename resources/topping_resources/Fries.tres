@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ToppingResource" load_steps=2 format=3 uid="uid://53c2osmtyqws"]
+
+[ext_resource type="Script" uid="uid://bjxhoqw5ls7fc" path="res://resources/topping_resource.gd" id="1_cvh3u"]
+
+[resource]
+script = ExtResource("1_cvh3u")
+Name = "Fries"
+Colour = "Yellow"
+Consistency = "Solid"
+Flavor = "Salty"
+metadata/_custom_type_script = "uid://bjxhoqw5ls7fc"

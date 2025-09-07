@@ -1,0 +1,94 @@
+[gd_scene load_steps=16 format=3 uid="uid://bqrf13u3al8hw"]
+
+[ext_resource type="Script" uid="uid://buy4h6jkx2nkg" path="res://hotdog_scenes/hot_dog.gd" id="1_btll6"]
+[ext_resource type="Texture2D" uid="uid://c1vy8eckn856n" path="res://art/Base Hotdog/hotdog.png" id="2_r1noh"]
+[ext_resource type="Texture2D" uid="uid://csgcwen8r7sb" path="res://art/Toppings/Ketchup Topping.png" id="3_5fhxb"]
+[ext_resource type="Texture2D" uid="uid://ci6otumjmflk8" path="res://art/Toppings/Relish Topping.png" id="4_0mfij"]
+[ext_resource type="Texture2D" uid="uid://dir4nx8btpgd7" path="res://art/Toppings/Mustard Topping.png" id="5_aey1x"]
+[ext_resource type="Texture2D" uid="uid://bdi5cc2i27ylk" path="res://art/Toppings/Cheese Topping.png" id="6_hg6vg"]
+[ext_resource type="Texture2D" uid="uid://06shiwd0mk7h" path="res://art/Toppings/Bacon Topping Back.png" id="6_quwt4"]
+[ext_resource type="Texture2D" uid="uid://bnkrijwm1l3h7" path="res://art/Toppings/Chili Flakes Topping.png" id="7_p1x34"]
+[ext_resource type="Texture2D" uid="uid://dgwbagnpeyd13" path="res://art/Toppings/Chives Topping.png" id="8_l1xjg"]
+[ext_resource type="Texture2D" uid="uid://dffc15k1huih3" path="res://art/Toppings/Bacon Topping Front.png" id="10_kc3qo"]
+[ext_resource type="Texture2D" uid="uid://dg24mbjub0siw" path="res://art/Toppings/Jalapenos Topping.png" id="11_tpla6"]
+[ext_resource type="Texture2D" uid="uid://dcjhga3hk70hm" path="res://art/Toppings/Fries Topping.png" id="12_4x7ws"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aulbg"]
+rough = true
+bounce = 0.17
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8ule1"]
+radius = 15.0
+height = 230.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gydrx"]
+radius = 30.0
+height = 230.0
+
+[node name="HotDog" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_aulbg")
+script = ExtResource("1_btll6")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2DPhysics" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_8ule1")
+
+[node name="Sprite2DMain" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_r1noh")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2DMouse" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_gydrx")
+
+[node name="Ketchup" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_5fhxb")
+
+[node name="Relish" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_0mfij")
+
+[node name="Mustard" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_aey1x")
+
+[node name="BaconBack" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_quwt4")
+
+[node name="Cheese" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_hg6vg")
+
+[node name="Chives" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("8_l1xjg")
+
+[node name="ChiliFlakes" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_p1x34")
+
+[node name="BaconFront" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("10_kc3qo")
+
+[node name="Jalapenos" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("11_tpla6")
+
+[node name="Fries" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("12_4x7ws")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(3.49999, -18)
+scale = Vector2(11.85, 3.6)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -1,0 +1,177 @@
+[gd_scene load_steps=26 format=3 uid="uid://whkp877b4vsy"]
+
+[ext_resource type="Script" uid="uid://cyrky4srevd5u" path="res://alien_scenes/alien.gd" id="1_jur2y"]
+[ext_resource type="Texture2D" uid="uid://bx70mkhhtq8md" path="res://art/Alien/AlienP.png" id="2_0fkk3"]
+[ext_resource type="Texture2D" uid="uid://mvkgo06qkxjv" path="res://art/Alien/Outlines/AlienPoutlineY.png" id="3_yq2hf"]
+[ext_resource type="Texture2D" uid="uid://dqx3euuo51s7e" path="res://art/Alien/Outlines/AlienPoutlineG.png" id="4_m1idr"]
+[ext_resource type="Texture2D" uid="uid://yfscs137xlka" path="res://art/Alien/Outlines/AlienPoutlineR.png" id="5_03iqy"]
+[ext_resource type="Texture2D" uid="uid://cxsnmchkm265t" path="res://art/Alien/AlienG.png" id="6_3kilb"]
+[ext_resource type="Texture2D" uid="uid://cawau7suaml1v" path="res://art/Alien/hats/sprinkles hat.png" id="6_gnryv"]
+[ext_resource type="Texture2D" uid="uid://d2oic3hyv8an2" path="res://art/Alien/hats/solids hat.png" id="7_d66gf"]
+[ext_resource type="Texture2D" uid="uid://e7u48nnklw6h" path="res://art/Alien/Outlines/AlienGoutlineY.png" id="7_qyj5t"]
+[ext_resource type="Texture2D" uid="uid://dtfcsp5gdfmxg" path="res://art/Alien/Outlines/AlienGoutlineG.png" id="8_m68y2"]
+[ext_resource type="Texture2D" uid="uid://xq472782kpoj" path="res://art/Alien/hats/liquid hat.png" id="8_o7auq"]
+[ext_resource type="Texture2D" uid="uid://0kml57620ld1" path="res://art/Alien/bibs/p fresh.png" id="9_ccpwa"]
+[ext_resource type="Texture2D" uid="uid://b3dkkr1hx8lur" path="res://art/Alien/Outlines/AlienGoutlineR.png" id="9_guust"]
+[ext_resource type="Texture2D" uid="uid://cyugefdi6tvxm" path="res://art/Alien/bibs/p salty.png" id="10_8b817"]
+[ext_resource type="Texture2D" uid="uid://cpapqvhp11fxu" path="res://art/Alien/AlienY.png" id="10_fglnb"]
+[ext_resource type="Texture2D" uid="uid://crs5cotjjyfxt" path="res://art/Alien/bibs/p spicy.png" id="11_od2m5"]
+[ext_resource type="Texture2D" uid="uid://dpp0b3fpxodqd" path="res://art/Alien/Outlines/AlienYoutlineY.png" id="11_p305h"]
+[ext_resource type="Texture2D" uid="uid://ddy31yyxlgmc1" path="res://art/Alien/Outlines/AlienYoutlineG.png" id="12_k2wjk"]
+[ext_resource type="Texture2D" uid="uid://cd1opxdik5i1k" path="res://art/Alien/Outlines/AlienYoutlineR.png" id="13_ttp6g"]
+[ext_resource type="Texture2D" uid="uid://co1gju1843avn" path="res://art/Alien/bibs/g fresh.png" id="16_xkpqj"]
+[ext_resource type="Texture2D" uid="uid://dc2xxdtg0g6ed" path="res://art/Alien/bibs/g salty.png" id="17_27pad"]
+[ext_resource type="Texture2D" uid="uid://br7db3a18dam8" path="res://art/Alien/bibs/g spicy.png" id="18_hgrau"]
+[ext_resource type="Texture2D" uid="uid://dcc2hui4f37n1" path="res://art/Alien/bibs/y fresh.png" id="23_kjrnl"]
+[ext_resource type="Texture2D" uid="uid://bre8ifj1bn428" path="res://art/Alien/bibs/y salty.png" id="24_pa0yk"]
+[ext_resource type="Texture2D" uid="uid://de6gfdyajfayi" path="res://art/Alien/bibs/y spicy.png" id="25_ra46n"]
+
+[node name="Alien" type="Node2D"]
+position = Vector2(624, 384)
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_jur2y")
+metadata/_edit_group_ = true
+
+[node name="PurpleAlien" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_0fkk3")
+
+[node name="Colour" type="Node2D" parent="PurpleAlien"]
+
+[node name="Yellow" type="Sprite2D" parent="PurpleAlien/Colour"]
+visible = false
+texture = ExtResource("3_yq2hf")
+
+[node name="Green" type="Sprite2D" parent="PurpleAlien/Colour"]
+visible = false
+texture = ExtResource("4_m1idr")
+
+[node name="Red" type="Sprite2D" parent="PurpleAlien/Colour"]
+visible = false
+texture = ExtResource("5_03iqy")
+
+[node name="Consistency" type="Node2D" parent="PurpleAlien"]
+
+[node name="Sprinkles" type="Sprite2D" parent="PurpleAlien/Consistency"]
+visible = false
+position = Vector2(-290, 12)
+texture = ExtResource("6_gnryv")
+
+[node name="Solids" type="Sprite2D" parent="PurpleAlien/Consistency"]
+visible = false
+position = Vector2(-290, 10)
+texture = ExtResource("7_d66gf")
+
+[node name="Liquids" type="Sprite2D" parent="PurpleAlien/Consistency"]
+visible = false
+position = Vector2(-290, 14)
+texture = ExtResource("8_o7auq")
+
+[node name="Flavor" type="Node2D" parent="PurpleAlien"]
+
+[node name="Fresh" type="Sprite2D" parent="PurpleAlien/Flavor"]
+visible = false
+texture = ExtResource("9_ccpwa")
+
+[node name="Salty" type="Sprite2D" parent="PurpleAlien/Flavor"]
+visible = false
+texture = ExtResource("10_8b817")
+
+[node name="Spicy" type="Sprite2D" parent="PurpleAlien/Flavor"]
+visible = false
+texture = ExtResource("11_od2m5")
+
+[node name="GreenAlien" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("6_3kilb")
+
+[node name="Colour" type="Node2D" parent="GreenAlien"]
+
+[node name="Yellow" type="Sprite2D" parent="GreenAlien/Colour"]
+visible = false
+texture = ExtResource("7_qyj5t")
+
+[node name="Green" type="Sprite2D" parent="GreenAlien/Colour"]
+visible = false
+texture = ExtResource("8_m68y2")
+
+[node name="Red" type="Sprite2D" parent="GreenAlien/Colour"]
+visible = false
+texture = ExtResource("9_guust")
+
+[node name="Consistency" type="Node2D" parent="GreenAlien"]
+
+[node name="Sprinkles" type="Sprite2D" parent="GreenAlien/Consistency"]
+visible = false
+position = Vector2(30, -75)
+texture = ExtResource("6_gnryv")
+
+[node name="Solids" type="Sprite2D" parent="GreenAlien/Consistency"]
+visible = false
+position = Vector2(30, -78)
+texture = ExtResource("7_d66gf")
+
+[node name="Liquids" type="Sprite2D" parent="GreenAlien/Consistency"]
+visible = false
+position = Vector2(30, -77)
+texture = ExtResource("8_o7auq")
+
+[node name="Flavor" type="Node2D" parent="GreenAlien"]
+
+[node name="Fresh" type="Sprite2D" parent="GreenAlien/Flavor"]
+visible = false
+texture = ExtResource("16_xkpqj")
+
+[node name="Salty" type="Sprite2D" parent="GreenAlien/Flavor"]
+visible = false
+texture = ExtResource("17_27pad")
+
+[node name="Spicy" type="Sprite2D" parent="GreenAlien/Flavor"]
+visible = false
+texture = ExtResource("18_hgrau")
+
+[node name="YellowAlien" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("10_fglnb")
+
+[node name="Colour" type="Node2D" parent="YellowAlien"]
+
+[node name="Yellow" type="Sprite2D" parent="YellowAlien/Colour"]
+visible = false
+texture = ExtResource("11_p305h")
+
+[node name="Green" type="Sprite2D" parent="YellowAlien/Colour"]
+visible = false
+texture = ExtResource("12_k2wjk")
+
+[node name="Red" type="Sprite2D" parent="YellowAlien/Colour"]
+visible = false
+texture = ExtResource("13_ttp6g")
+
+[node name="Consistency" type="Node2D" parent="YellowAlien"]
+
+[node name="Sprinkles" type="Sprite2D" parent="YellowAlien/Consistency"]
+visible = false
+texture = ExtResource("6_gnryv")
+
+[node name="Solids" type="Sprite2D" parent="YellowAlien/Consistency"]
+visible = false
+texture = ExtResource("7_d66gf")
+
+[node name="Liquids" type="Sprite2D" parent="YellowAlien/Consistency"]
+visible = false
+texture = ExtResource("8_o7auq")
+
+[node name="Flavor" type="Node2D" parent="YellowAlien"]
+
+[node name="Fresh" type="Sprite2D" parent="YellowAlien/Flavor"]
+visible = false
+texture = ExtResource("23_kjrnl")
+
+[node name="Salty" type="Sprite2D" parent="YellowAlien/Flavor"]
+visible = false
+texture = ExtResource("24_pa0yk")
+
+[node name="Spicy" type="Sprite2D" parent="YellowAlien/Flavor"]
+visible = false
+texture = ExtResource("25_ra46n")

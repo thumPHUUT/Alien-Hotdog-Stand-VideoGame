@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://crnpdcniyudom"]
+
+[ext_resource type="PackedScene" uid="uid://66uavv5dcadh" path="res://bun.tscn" id="1_0bya5"]
+[ext_resource type="Script" path="res://world.gd" id="1_hcfqt"]
+[ext_resource type="PackedScene" uid="uid://bqrf13u3al8hw" path="res://hot_dog.tscn" id="2_ee3wf"]
+[ext_resource type="PackedScene" uid="uid://tjtv3uphqx3n" path="res://sausage.tscn" id="3_26rs2"]
+[ext_resource type="Texture2D" uid="uid://bvt6lpf5kijcs" path="res://icon.svg" id="4_gs3jl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4qje"]
+size = Vector2(1029, 69)
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_hcfqt")
+
+[node name="Bun" parent="." instance=ExtResource("1_0bya5")]
+position = Vector2(235, 433)
+
+[node name="HotDog" parent="." instance=ExtResource("2_ee3wf")]
+position = Vector2(590, 176)
+
+[node name="Sausage" parent="." instance=ExtResource("3_26rs2")]
+position = Vector2(956, 414)
+
+[node name="Table" type="StaticBody2D" parent="."]
+position = Vector2(658, 666)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Table"]
+scale = Vector2(8, 0.6)
+texture = ExtResource("4_gs3jl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Table"]
+position = Vector2(0.5, 6.5)
+shape = SubResource("RectangleShape2D_f4qje")
+
+[connection signal="bun_collision" from="Sausage" to="." method="_on_sausage_bun_collision"]

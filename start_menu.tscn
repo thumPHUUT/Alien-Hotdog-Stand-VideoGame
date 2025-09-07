@@ -1,0 +1,103 @@
+[gd_scene load_steps=8 format=3 uid="uid://cd3yww08hlrrs"]
+
+[ext_resource type="Script" uid="uid://cm322hjtr1j5o" path="res://start_menu.gd" id="1_jwbto"]
+[ext_resource type="Texture2D" uid="uid://b661sg8o7a7ff" path="res://art/Background+Labels/title.png" id="2_ia0g5"]
+[ext_resource type="Texture2D" uid="uid://d074aeiitu772" path="res://art/Background+Labels/title(3).png" id="3_ppfnh"]
+[ext_resource type="Texture2D" uid="uid://brx24uthnj4p3" path="res://art/Background+Labels/title(1).png" id="3_v2mkm"]
+[ext_resource type="Texture2D" uid="uid://byr5fk4cb41e4" path="res://art/Background+Labels/title(4).png" id="4_7boi2"]
+[ext_resource type="Texture2D" uid="uid://dsv63wt421w2q" path="res://art/Background+Labels/title(2).png" id="4_ctwoq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pgi0o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ppfnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7boi2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.6,
+"texture": ExtResource("3_v2mkm")
+}, {
+"duration": 0.7,
+"texture": ExtResource("4_ctwoq")
+}],
+"loop": true,
+"name": &"windup",
+"speed": 5.0
+}]
+
+[node name="StartMenu" type="Node2D"]
+script = ExtResource("1_jwbto")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 52.0
+offset_top = 35.0
+offset_right = 207.0
+offset_bottom = 58.0
+scale = Vector2(2, 2)
+text = "Welcome to the . . ."
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(660, 223)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_ia0g5")
+
+[node name="AnimatedTitle" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(660, 223)
+scale = Vector2(0.45, 0.45)
+sprite_frames = SubResource("SpriteFrames_pgi0o")
+animation = &"windup"
+frame_progress = 0.679752
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 565.0
+offset_top = 339.0
+offset_right = 661.0
+offset_bottom = 370.0
+scale = Vector2(2, 2)
+text = "Start Game"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 583.0
+offset_top = 446.0
+offset_right = 692.0
+offset_bottom = 495.0
+scale = Vector2(1.5, 1.5)
+text = "- Game Hints -
+ Tutorial Text"
+
+[node name="NextButton" type="Button" parent="."]
+offset_left = 1116.0
+offset_top = 598.0
+offset_right = 1161.0
+offset_bottom = 629.0
+text = "Next"
+
+[node name="PrevButton" type="Button" parent="."]
+offset_left = 136.0
+offset_top = 596.0
+offset_right = 211.0
+offset_bottom = 627.0
+text = "Previous
+"
+
+[node name="HintLabel" type="Label" parent="."]
+offset_left = 246.0
+offset_top = 572.0
+offset_right = 1082.0
+offset_bottom = 647.0
+text = "\"Welcome to the Alien Hotdog Stand! Wade your way through customers from three different alien factions, 
+			all with individual ingredient preferences and special preference modifiers indicated by differences in 
+			their attire and quirks!\""
+
+[connection signal="animation_looped" from="AnimatedTitle" to="." method="_on_animated_title_animation_looped"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="PrevButton" to="." method="_on_prev_button_pressed"]
