@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dfoql00epjlms"]
 
-[ext_resource type="Script" uid="uid://b7l74uwk8s7ct" path="res://rent_screen.gd" id="1_2lrw4"]
+[ext_resource type="Script" uid="uid://b7l74uwk8s7ct" path="res://high_level_management_scenes/rent_screen.gd" id="1_2lrw4"]
 [ext_resource type="Texture2D" uid="uid://cjw67ac5qqdaw" path="res://art/Background+Labels/rent screen.png" id="2_bm7k1"]
 [ext_resource type="Texture2D" uid="uid://cxu8mdgcss8wp" path="res://art/Background+Labels/rent screen(L).png" id="3_enmcv"]
 [ext_resource type="Texture2D" uid="uid://cdlnbniu7g6lh" path="res://art/Background+Labels/rent screen(R).png" id="4_t1f0w"]

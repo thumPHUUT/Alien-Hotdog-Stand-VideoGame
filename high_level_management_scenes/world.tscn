@@ -1,10 +1,10 @@
 [gd_scene load_steps=24 format=3 uid="uid://crnpdcniyudom"]
 
 [ext_resource type="PackedScene" uid="uid://66uavv5dcadh" path="res://hotdog_scenes/bun.tscn" id="1_0bya5"]
-[ext_resource type="Script" uid="uid://csntimnq8vvgg" path="res://world.gd" id="1_hcfqt"]
+[ext_resource type="Script" uid="uid://csntimnq8vvgg" path="res://high_level_management_scenes/world.gd" id="1_hcfqt"]
 [ext_resource type="PackedScene" uid="uid://bqrf13u3al8hw" path="res://hotdog_scenes/hot_dog.tscn" id="2_ee3wf"]
 [ext_resource type="PackedScene" uid="uid://tjtv3uphqx3n" path="res://hotdog_scenes/sausage.tscn" id="3_26rs2"]
-[ext_resource type="PackedScene" uid="uid://3jct2jefo3gm" path="res://scoring_node.tscn" id="5_2u3nc"]
+[ext_resource type="PackedScene" uid="uid://3jct2jefo3gm" path="res://high_level_management_scenes/scoring_node.tscn" id="5_2u3nc"]
 [ext_resource type="Texture2D" uid="uid://c1wc6l50t5ybq" path="res://art/Background+Labels/table.png" id="6_2u3nc"]
 [ext_resource type="PackedScene" uid="uid://hvshml3mikpk" path="res://alien_scenes/alien_queue.tscn" id="6_hiqwa"]
 [ext_resource type="PackedScene" uid="uid://cwjwvdqtgmfdf" path="res://topping_scenes/ketchup.tscn" id="6_vjioc"]

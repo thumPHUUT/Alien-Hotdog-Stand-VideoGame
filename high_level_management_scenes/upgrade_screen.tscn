@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c3kvissg6i644"]
 
-[ext_resource type="Script" uid="uid://c4vrie0ks48j2" path="res://upgrade_screen.gd" id="1_scxlh"]
-[ext_resource type="PackedScene" uid="uid://3jct2jefo3gm" path="res://scoring_node.tscn" id="2_ovwte"]
+[ext_resource type="Script" uid="uid://c4vrie0ks48j2" path="res://high_level_management_scenes/upgrade_screen.gd" id="1_scxlh"]
+[ext_resource type="PackedScene" uid="uid://3jct2jefo3gm" path="res://high_level_management_scenes/scoring_node.tscn" id="2_ovwte"]
 [ext_resource type="Texture2D" uid="uid://t7g47j5qhm02" path="res://art/Background+Labels/label.png" id="3_sbak5"]
 [ext_resource type="Texture2D" uid="uid://b8gsu2ksk886o" path="res://art/Background+Labels/label2.png" id="4_bfcw2"]
 
